@@ -40,3 +40,57 @@
 .read-the-docs {
   color: #888;
 }
+.productImageContainer{
+  padding: 0%;
+  overflow: hidden;
+}
+.productImage{
+display: block;
+width: 100%;
+max-height: 200px;
+aspect-ratio: 16/9;
+object-fit: contain;
+object-position: center;
+}
+
+.productContainer{
+  display: grid; 
+  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap: 1rem;
+
+  }
+
+.productCard{
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
+  }
+
+  .productCardheader{
+    font-size: 1.5rem;
+    padding: 1rem;
+    padding-bottom: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .productCardbody {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+  .productCardfooter{ 
+  margin-top: 1rem;
+  padding: 1rem;
+  padding-top: 0
+  }
+
+.btn{
+  background: hsl(200, 50%, 50%);
+  color: white;
+  border: none;
+  padding: 0.5em 0.75em;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+  
