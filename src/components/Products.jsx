@@ -1,39 +1,30 @@
 import { useEffect, useState } from "react";
 import { fetchProducts } from "../Api/index.js";
-import NavBar from "./Navbar.jsx";
+import ProductCard from "./ProductCard.jsx";
 
-export default function Products() {
+export default function Products({ category }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const getProducts = async () => {
       let productsInfo = await fetchProducts();
-      console.log("Products", productsInfo);
       setProducts(productsInfo);
     };
     getProducts();
   }, []);
-  return (
-    <div>
-      <h1>Products</h1>
-      <div className="productContainer">
-        {products.map((product, i) => (
-          <div className="productCard" key={i}>
-            <div className="productCardheader">{product.title}</div>
-            <div className="productImageContainer">
-              <img className="productImage" src={product.image} />
-            </div>
-            <div className="productCardbody">
-              <div>
-                 {product.price}
-                <div>{product.description}</div>
-              </div>
-            </div>
-            <div className="productCardfooter" >
-            <button className="btn"> Add to Cart </button>
 
-            </div>
-          </div>
+  const filterProducts = (product) => {
+    if (category) {
+      return product.category === category;
+    }
+    return true;
+  };
+  return (
+    <div style={{ textTransform: "capitalize" }}>
+      <h1>{category ? category : "Products"}</h1>
+      <div className="productContainer">
+        {products.filter(filterProducts).map((product, i) => (
+          <ProductCard product={product} key={i} />
         ))}
       </div>
     </div>
