@@ -72,7 +72,7 @@ export default function Cart() {
                         </tr>
                       ))}
                     <tr>
-                      <td>Grand Total: ${getTotalCost()}</td>
+                      <td>Grand Total: ${getTotalCost().toFixed(2)}</td>
                     </tr>
                   </tbody>
                 </table>
