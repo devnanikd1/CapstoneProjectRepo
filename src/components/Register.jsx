@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import AuthForm from "./AuthForm";
-import { registerUser } from "../api/request";
+import { registerUser } from "../Api/request";
 
 export default function Register({ setToken }) {
   const [username, setUsername] = useState("");
@@ -12,8 +12,8 @@ export default function Register({ setToken }) {
   async function handleSubmit(e) {
     e.preventDefault();
     const user = await registerUser(username, password);
-    console.log(user, token);
-    setToken(user, token);
+    // console.log(user, token);
+    // setToken(user, token);
   }
   return (
     <div>
