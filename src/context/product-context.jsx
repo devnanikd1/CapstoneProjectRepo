@@ -5,6 +5,8 @@ export const ProductContext = createContext(null);
 export const ProductContextProvider = (props) => {
   const [cartItems, setCartItems] = useState([]);
   const [cart, setCart] = useState([]);
+  const [totalCost, setTotalcost] = useState(0);
+
 
   useEffect(() => {
     const getDefaultCart = async () => {
@@ -27,6 +29,7 @@ export const ProductContextProvider = (props) => {
   };
 
   const removeFromCart = (item) => {
+    console.log(cartItems);
     if (cartItems[item.id] === 1) {
       setCart(cart.filter((i) => i !== item));
     }

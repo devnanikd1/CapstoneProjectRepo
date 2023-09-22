@@ -2,9 +2,18 @@ import { ProductContext } from "../context/product-context.jsx";
 import { useContext, useEffect, useState } from "react";
 
 export default function Cart() {
-  const { cart, cartItems, removeFromCart, getTotalCost } =
+  const { cart, cartItems, removeFromCart } =
     useContext(ProductContext);
   console.log(cart, cartItems);
+  const [totalCost, setTotalCost] = useState(0);
+  useEffect(() => {
+    setTotalCost(cart.reduce(
+      (acc, currentVal) =>
+        acc + Number(currentVal.price) * cartItems[currentVal.id],
+      0
+    ));
+  }, [cartItems, cart]);
+ 
   return (
     <div>
       {cart.length ? (
@@ -72,7 +81,7 @@ export default function Cart() {
                         </tr>
                       ))}
                     <tr>
-                      <td>Grand Total: ${getTotalCost().toFixed(2)}</td>
+                      <td>Grand Total: ${totalCost.toFixed(2)}</td>
                     </tr>
                   </tbody>
                 </table>
