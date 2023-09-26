@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(23, 2, 58, 0.87);
   background-color: #242424;
 
   font-synthesis: none;
@@ -24,7 +24,7 @@
 }
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #1018b2;
   text-decoration: inherit;
 }
 a:hover {
@@ -50,7 +50,6 @@ body{
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-smoothing: antialiased;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
   font-size: 15px;
@@ -58,7 +57,7 @@ body{
 .intro{
    background: #fff;
    padding: 60px 30px;
-   color: #333;
+   color: #15043f;
    margin-bottom: 15px;
    line-height: 1.5;
    text-align: center;
@@ -100,8 +99,9 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #0a4b69;
   }
+}
   a:hover {
     color: #747bff;
   }
@@ -134,7 +134,7 @@ a.btn:hover{
     padding: 12px;
     font-size: 9pt;
     text-align: center;
-    color: #333;
+    color: #560fe4;
     margin-top: 40px;
 
 }
@@ -159,11 +159,11 @@ a.btn:hover{
     position: absolute;
     margin: 3px;
 }
-main{
+/* main{
   background: #fff;
   padding: 20px;
   
-}
+} */
 
 article li{
    color: #444;
@@ -244,7 +244,7 @@ pre.prettyprint {
 	padding: 15px !important;
    margin: 10px;
 	border: 0 !important;
-  background: #f2f2f2;
+  background: #280372;
   overflow: auto;
 }
 
